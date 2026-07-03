@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fenix Grand — Pomoc Drogowa i Laweta | Holowanie aut</title>
+<meta name="description" content="Fenix Grand — pomoc drogowa i laweta. Holowanie aut, przewóz pojazdów powypadkowych, dowóz paliwa, odpalanie auta. Zadzwoń: 575 588 699.">
+<link rel="icon" type="image/png" href="assets/logo-client.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#111214;
+    --bg2:#1a1b1e;
+    --card:#202124;
+    --yellow:#f5b301;
+    --yellow-dark:#c79200;
+    --text:#e8e6e1;
+    --muted:#a09d96;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  .hazard{height:10px;background:repeating-linear-gradient(45deg,var(--yellow) 0 18px,#141414 18px 36px)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(17,18,20,.95);backdrop-filter:blur(6px);border-bottom:1px solid #2a2b2e}
+  .header-inner{max-width:1100px;margin:0 auto;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{font-weight:900;font-size:1.45rem;letter-spacing:.5px;display:flex;align-items:center;gap:12px}
+  .logo .fx{color:var(--yellow)}
+  nav ul{display:flex;gap:26px;list-style:none}
+  nav a{font-size:.92rem;font-weight:600;color:var(--muted);transition:color .2s}
+  nav a:hover{color:var(--yellow)}
+  .header-phone{font-weight:700;color:var(--yellow);white-space:nowrap}
+  .burger{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 30%,#26221a 0%,var(--bg) 60%)}
+  .hero-inner{max-width:1100px;margin:0 auto;padding:90px 20px 100px;position:relative;z-index:2}
+  .hero .phoenix{position:absolute;right:60px;top:50%;transform:translateY(-50%);width:480px;z-index:1;pointer-events:none}
+  .hero h1{font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:900;line-height:1.15;max-width:640px}
+  .hero h1 span{color:var(--yellow)}
+  .hero p.sub{margin-top:18px;font-size:1.08rem;color:var(--muted);max-width:560px}
+  .cta-row{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:8px;font-weight:700;font-size:1.02rem;transition:transform .15s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-yellow{background:var(--yellow);color:#141414}
+  .btn-yellow:hover{background:#ffc41a}
+  .btn-outline{border:2px solid var(--yellow);color:var(--yellow)}
+  .btn-outline:hover{background:rgba(245,179,1,.1)}
+  .hero-badges{margin-top:44px;display:flex;gap:28px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+  .hero-badges b{color:var(--text)}
+
+  section{padding:80px 20px}
+  .wrap{max-width:1100px;margin:0 auto}
+  .sec-label{color:var(--yellow);font-weight:700;font-size:.85rem;letter-spacing:2.5px;text-transform:uppercase}
+  h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin:10px 0 14px}
+  .sec-intro{color:var(--muted);max-width:640px}
+
+  /* Services */
+  #uslugi{background:var(--bg2)}
+  .services-grid{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .service{background:var(--card);border:1px solid #2c2d30;border-radius:12px;padding:28px;transition:border-color .2s}
+  .service:hover{border-color:var(--yellow)}
+  .service .icon{width:52px;height:52px;border-radius:10px;background:rgba(245,179,1,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .service .icon svg{width:28px;height:28px;stroke:var(--yellow);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .service h3{font-size:1.12rem;margin-bottom:8px}
+  .service p{color:var(--muted);font-size:.95rem}
+
+  /* About */
+  .about-grid{margin-top:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .about-text p{color:var(--muted);margin-bottom:16px}
+  .about-text strong{color:var(--text)}
+  .about-points{list-style:none;margin-top:8px}
+  .about-points li{padding:10px 0 10px 34px;position:relative;font-weight:600}
+  .about-points li::before{content:"";position:absolute;left:0;top:14px;width:18px;height:18px;background:var(--yellow);clip-path:polygon(14% 44%,0 65%,50% 100%,100% 16%,80% 0,43% 62%)}
+  .about-visual{background:var(--card);border:1px solid #2c2d30;border-radius:12px;padding:36px;text-align:center}
+  .about-visual svg{width:150px;margin:0 auto 18px}
+  .about-visual .big{font-size:2.4rem;font-weight:900;color:var(--yellow)}
+  .about-visual .small{color:var(--muted);font-size:.9rem}
+
+  /* Gallery */
+  #galeria{background:var(--bg2)}
+  .gallery-grid{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block;border:1px solid #2c2d30}
+  .ph{aspect-ratio:4/3;border-radius:10px;border:1px dashed #3a3b3e;background:linear-gradient(135deg,#1c1d20,#242528);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#5d5e61;font-size:.85rem;font-weight:600}
+  .ph svg{width:42px;height:42px;stroke:#4a4b4e;fill:none;stroke-width:1.5}
+
+  /* Contact */
+  .contact-grid{margin-top:44px;display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+  .contact-info h3{font-size:1.1rem;margin-bottom:20px}
+  .c-line{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #2a2b2e}
+  .c-line svg{width:24px;height:24px;stroke:var(--yellow);fill:none;stroke-width:1.8;flex-shrink:0}
+  .c-line a{font-weight:700;font-size:1.05rem}
+  .c-line a:hover{color:var(--yellow)}
+  .c-line span{color:var(--muted);font-size:.85rem;display:block}
+  form{background:var(--card);border:1px solid #2c2d30;border-radius:12px;padding:32px}
+  form label{display:block;font-size:.85rem;font-weight:600;color:var(--muted);margin:16px 0 6px}
+  form label:first-child{margin-top:0}
+  form input,form textarea{width:100%;background:var(--bg);border:1px solid #3a3b3e;border-radius:8px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:.95rem}
+  form input:focus,form textarea:focus{outline:none;border-color:var(--yellow)}
+  form button{margin-top:22px;width:100%;border:none;cursor:pointer}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:100;width:62px;height:62px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.45);transition:transform .15s}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:34px;height:34px;fill:#fff}
+  footer{border-top:1px solid #2a2b2e;padding:28px 20px;text-align:center;color:var(--muted);font-size:.85rem}
+  footer .logo{justify-content:center;margin-bottom:8px;font-size:1rem}
+
+  @media(max-width:800px){
+    nav{display:none}
+    nav.open{display:block;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid #2a2b2e;padding:10px 20px 20px}
+    nav.open ul{flex-direction:column;gap:14px}
+    .burger{display:block}
+    .header-phone{display:none}
+    .hero .phoenix{width:340px;opacity:.35}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+    section{padding:60px 20px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#start"><img src="assets/logo-client.png" alt="Fenix Grand — logo" style="height:60px;width:auto">FENIX <span class="fx">GRAND</span></a>
+    <button class="burger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+    <nav>
+      <ul>
+        <li><a href="#start">Start</a></li>
+        <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="header-phone" href="tel:+48575588699">☎ 575 588 699</a>
+  </div>
+</header>
+
+<div class="hazard"></div>
+
+<section class="hero" id="start" style="padding:0">
+  <img class="phoenix" src="assets/logo-client.png" alt="">
+  <div class="hero-inner">
+    <p class="sec-label">Pomoc drogowa · Laweta</p>
+    <h1>Holowanie i transport aut — <span>szybko i bezpiecznie</span></h1>
+    <p class="sub">Fenix Grand to profesjonalna pomoc drogowa. Holujemy auta sprawne i powypadkowe, dowozimy paliwo i pomagamy odpalić samochód — na miejscu, bez zbędnego czekania.</p>
+    <div class="cta-row">
+      <a class="btn btn-yellow" href="tel:+48575588699"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Zadzwoń</a>
+      <a class="btn btn-outline" href="https://wa.me/48575588699" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Napisz</a>
+    </div>
+    <div class="hero-badges">
+      <div><b>Szybki dojazd</b><br>na miejsce zdarzenia</div>
+      <div><b>Auta powypadkowe</b><br>i unieruchomione</div>
+      <div><b>Klienci prywatni i firmy</b><br>transport na terenie kraju</div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard"></div>
+
+<section id="uslugi">
+  <div class="wrap">
+    <p class="sec-label">Nasze usługi</p>
+    <h2>W czym możemy pomóc?</h2>
+    <p class="sec-intro">Dysponujemy lawetą przystosowaną do przewozu różnych pojazdów — również tych, które nie nadają się do jazdy.</p>
+    <div class="services-grid">
+      <div class="service">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M1 16h13V8h4l4 5v3h-2M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></div>
+        <h3>Holowanie aut</h3>
+        <p>Przewóz samochodów osobowych i dostawczych lawetą — lokalnie i na dłuższych trasach.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12l3-7h9l3 7M3 12v5h2m14-5v5h-2M7 17a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM12 5v-3M9 3h6"/></svg></div>
+        <h3>Auta powypadkowe i zatopione</h3>
+        <p>Bezpieczny załadunek i transport pojazdów po kolizji, wypadku lub zalaniu.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg></div>
+        <h3>Załadunek z urwanym kołem</h3>
+        <p>Specjalistyczny załadunek pojazdów unieruchomionych — także z urwanym lub zablokowanym kołem.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 4h-8a1 1 0 0 0-1 1v15h10V5a1 1 0 0 0-1-1zM5 20h10M15 9h2a2 2 0 0 1 2 2v4a1.5 1.5 0 0 0 3 0V8l-3-3M8 8h4"/></svg></div>
+        <h3>Dowóz paliwa</h3>
+        <p>Zabrakło paliwa w trasie? Dowieziemy je bezpośrednio do Twojego auta.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11l-1 8.5L18.5 10H12l1-8z"/></svg></div>
+        <h3>Odpalanie auta</h3>
+        <p>Rozładowany akumulator to nie problem — pomożemy uruchomić samochód na miejscu.</p>
+      </div>
+      <div class="service">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h2m2 0h2M9 13h2m2 0h2M9 17h2m2 0h2"/></svg></div>
+        <h3>Transport dla firm</h3>
+        <p>Stała lub doraźna współpraca — przewozy samochodów dla firm, komisów i warsztatów.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="o-nas">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <p class="sec-label">O nas</p>
+      <h2>Fenix Grand — pomoc, na którą możesz liczyć</h2>
+      <p>Zajmujemy się <strong>pomocą drogową i transportem pojazdów</strong>. Wiemy, że awaria czy kolizja to zawsze stres — dlatego działamy sprawnie, dojeżdżamy szybko i traktujemy każde auto tak, jakby było nasze.</p>
+      <p>Obsługujemy zarówno <strong>klientów indywidualnych</strong>, jak i <strong>firmy</strong>, które potrzebują regularnych przewozów samochodów.</p>
+      <ul class="about-points">
+        <li>Sprawny kontakt — telefon lub WhatsApp</li>
+        <li>Doświadczenie w trudnych załadunkach</li>
+        <li>Uczciwe, jasne warunki współpracy</li>
+      </ul>
+    </div>
+    <div class="about-visual">
+      <img src="assets/logo-client.png" alt="Fenix Grand — logo" style="width:180px;margin:0 auto 18px;display:block">
+      <div class="big">Fenix Grand</div>
+      <div class="small">Pomoc drogowa · Laweta<br>pomoc-drogowa-fenix.pl</div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <p class="sec-label">Galeria</p>
+    <h2>Nasza laweta w akcji</h2>
+    <p class="sec-intro">Nasza laweta podczas codziennej pracy — holowanie, transport aut powypadkowych i nowych pojazdów.</p>
+    <div class="gallery-grid">
+      <img src="assets/gallery/laweta-1.jpg" alt="Laweta Fenix Grand przewozi samochód osobowy" loading="lazy">
+      <img src="assets/gallery/laweta-2.jpg" alt="Transport nowego auta z salonu na lawecie" loading="lazy">
+      <img src="assets/gallery/laweta-3.jpg" alt="Przewóz auta powypadkowego na lawecie" loading="lazy">
+      <img src="assets/gallery/laweta-4.jpg" alt="Laweta Fenix Grand z SUV-em na platformie" loading="lazy">
+      <img src="assets/gallery/laweta-5.jpg" alt="Holowanie kombi na lawecie" loading="lazy">
+      <img src="assets/gallery/laweta-6.jpg" alt="Załadunek auta miejskiego na platformę" loading="lazy">
+      <img src="assets/gallery/laweta-7.jpg" alt="Pomoc drogowa Fenix Grand w trasie" loading="lazy">
+      <img src="assets/gallery/laweta-8.jpg" alt="Bezpieczne mocowanie pojazdu na platformie" loading="lazy">
+      <img src="assets/gallery/laweta-9.jpg" alt="Laweta Fenix Grand podczas transportu auta" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="hazard"></div>
+
+<section id="kontakt">
+  <div class="wrap">
+    <p class="sec-label">Kontakt</p>
+    <h2>Potrzebujesz pomocy? Odezwij się!</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Dane kontaktowe</h3>
+        <div class="c-line">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><a href="tel:+48575588699">575 588 699</a><span>Telefon</span></div>
+        </div>
+        <div class="c-line">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <div><a href="https://wa.me/48575588699" target="_blank" rel="noopener">575 588 699</a><span>WhatsApp</span></div>
+        </div>
+        <div class="c-line">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
+          <div><a href="https://pomoc-drogowa-fenix.pl">pomoc-drogowa-fenix.pl</a><span>Strona www</span></div>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault();alert('Dziękujemy! Wiadomość została wysłana. (wersja demo)');this.reset();">
+        <label for="f-name">Imię</label>
+        <input id="f-name" type="text" required placeholder="Twoje imię">
+        <label for="f-phone">Telefon</label>
+        <input id="f-phone" type="tel" required placeholder="Numer telefonu">
+        <label for="f-msg">Wiadomość</label>
+        <textarea id="f-msg" rows="4" required placeholder="Opisz, w czym możemy pomóc..."></textarea>
+        <button class="btn btn-yellow" type="submit">Wyślij wiadomość</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><img src="assets/logo-client.png" alt="" style="height:30px;width:auto">FENIX <span class="fx" style="color:var(--yellow)">GRAND</span></div>
+  © 2026 Fenix Grand · Pomoc drogowa · pomoc-drogowa-fenix.pl
+</footer>
+
+<a class="wa-float" href="https://wa.me/48575588699" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.04 3C9.02 3 3.32 8.7 3.32 15.72c0 2.24.59 4.43 1.71 6.36L3.2 28.8l6.89-1.8a12.66 12.66 0 0 0 5.95 1.51h.01c7.01 0 12.72-5.7 12.72-12.72 0-3.4-1.32-6.6-3.72-9A12.65 12.65 0 0 0 16.04 3zm0 23.36h-.01a10.5 10.5 0 0 1-5.36-1.47l-.38-.23-3.98 1.04 1.06-3.88-.25-.4a10.55 10.55 0 0 1-1.62-5.62c0-5.83 4.75-10.58 10.59-10.58 2.83 0 5.48 1.1 7.48 3.1a10.52 10.52 0 0 1 3.1 7.48c0 5.84-4.75 10.58-10.58 10.58zm5.8-7.92c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.72.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.34-.5-2.56-1.58-.95-.85-1.58-1.89-1.77-2.21-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.72-.98-2.36-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.65 0 1.56 1.14 3.07 1.3 3.28.16.21 2.25 3.44 5.45 4.82.76.33 1.36.53 1.82.67.77.25 1.46.21 2.01.13.61-.09 1.88-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37z"/></svg>
+</a>
+
+</body>
+</html>
