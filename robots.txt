@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pomoc-drogowa-fenix.pl/sitemap.xml
