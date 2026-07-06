@@ -51,6 +51,8 @@
   .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 30%,#26221a 0%,var(--bg) 60%)}
   .hero-inner{max-width:1100px;margin:0 auto;padding:90px 20px 100px;position:relative;z-index:2}
   .hero .phoenix{position:absolute;right:60px;top:50%;transform:translateY(-50%);width:480px;z-index:1;pointer-events:none}
+  .hero-phone-top{display:inline-flex;align-items:center;gap:10px;font-size:1.9rem;font-weight:900;color:var(--yellow);letter-spacing:1px;margin-bottom:18px}
+  .hero-phone-top svg{width:26px;height:26px}
   .hero h1{font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:900;line-height:1.15;max-width:640px}
   .hero h1 span{color:var(--yellow)}
   .hero p.sub{margin-top:18px;font-size:1.08rem;color:var(--muted);max-width:560px}
@@ -73,10 +75,10 @@
   /* Services */
   #uslugi{background:var(--bg2)}
   .services-grid{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-  .service{background:var(--card);border:1px solid #2c2d30;border-radius:12px;padding:28px;transition:border-color .2s}
-  .service:hover{border-color:var(--yellow)}
-  .service .icon{width:52px;height:52px;border-radius:10px;background:rgba(245,179,1,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-  .service .icon svg{width:28px;height:28px;stroke:var(--yellow);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .service{background:var(--card);border:1px solid #2c2d30;border-top:3px solid var(--yellow);border-radius:12px;padding:28px;transition:border-color .2s}
+  .service:hover{border-color:var(--yellow);border-top-color:var(--yellow)}
+  .service .icon{width:62px;height:62px;border-radius:12px;background:var(--yellow);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .service .icon svg{width:34px;height:34px;stroke:#141414;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .service h3{font-size:1.12rem;margin-bottom:8px}
   .service p{color:var(--muted);font-size:.95rem}
 
@@ -143,6 +145,11 @@
     form label{font-size:1rem}
     form input,form textarea{font-size:1.1rem}
     .btn{font-size:1.15rem}
+    .hero-phone-top{font-size:2.4rem;gap:12px}
+    .hero-phone-top svg{width:32px;height:32px}
+    .service{text-align:center}
+    .service .icon{width:80px;height:80px;margin-left:auto;margin-right:auto}
+    .service .icon svg{width:44px;height:44px}
   }
 </style>
 </head>
@@ -170,6 +177,7 @@
 <section class="hero" id="start" style="padding:0">
   <img class="phoenix" src="assets/logo-client.png" alt="">
   <div class="hero-inner">
+    <a class="hero-phone-top" href="tel:+48575699588"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>575 699 588</a>
     <p class="sec-label">Pomoc drogowa · Laweta</p>
     <h1>Holowanie i transport aut — <span>szybko i bezpiecznie</span></h1>
     <p class="sub">Fenix Grand to profesjonalna pomoc drogowa. Holujemy auta sprawne i powypadkowe, dowozimy paliwo i pomagamy odpalić samochód — na miejscu, bez zbędnego czekania.</p>
